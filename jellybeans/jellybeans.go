@@ -3,14 +3,14 @@
 package main
 
 import (
-	"fmt"
-	"log"
+    "fmt"
+    "log"
     "math"
     "math/rand"
-	"net/http"
+    "net/http"
     "os"
     "strconv"
-	"time"
+    "time"
 )
 
 
@@ -62,7 +62,7 @@ func main() {
         shuffle_beans()
     }
 
-	log.Printf("How many jellybeans are in my jar?\n")
+    log.Printf("How many jellybeans are in my jar?\n")
     
     go func() {
         TempTraffic := 0
@@ -79,9 +79,9 @@ func main() {
         }
     }()
     
-	http.HandleFunc("/", guess_handler)
-	err := http.ListenAndServe(":7777", nil)
-	if err != nil {
-		fmt.Errorf("an error occured while running server %s", err.Error())
-	}
+    http.HandleFunc("/", guess_handler)
+    err := http.ListenAndServe(":7777", nil)
+    if err != nil {
+        fmt.Errorf("an error occured while running server %s", err.Error())
+    }
 }
