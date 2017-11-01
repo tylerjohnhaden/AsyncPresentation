@@ -16,6 +16,7 @@ async def attempt(client, guess):
 async def main():
     async with aiohttp.ClientSession() as client:
         async for i in guesses():
+            # runs successively without blocking
             data = await attempt(client, guess=i)
             if 'success' in data:
                 print(data)
@@ -25,3 +26,4 @@ async def main():
 if __name__ == '__main__':
     loop = asyncio.get_event_loop()
     loop.run_until_complete(main())
+
