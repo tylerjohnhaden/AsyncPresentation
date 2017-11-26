@@ -15,6 +15,7 @@ function readPromise(file) {
 readPromise('text.txt').then(function (m) {
     // normal execution
     console.log(m);
+
 }, function (e) {
     // catch error
     console.log(e);

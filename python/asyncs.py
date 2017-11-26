@@ -1,7 +1,7 @@
 import asyncio
 
 
-async def something(i):
+async def async_function(i):
     print('started {}'.format(i))
 
     # await acts like yield from generators
@@ -12,6 +12,5 @@ async def something(i):
 
 loop = asyncio.get_event_loop()
 for i in range(5):
-    asyncio.ensure_future(something(i))
+    asyncio.ensure_future(async_function(i))
 loop.run_forever()
-

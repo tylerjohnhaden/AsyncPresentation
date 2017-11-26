@@ -2,7 +2,8 @@ var fs = require('fs');
 
 function read(file) {
     var myData = null;
-    fs.readFile('text.txt', "utf8", function(err, data) {
+
+    fs.readFile(file, "utf8", function(err, data) {
         myData = err ? 'error' : data;
     });
 
@@ -16,7 +17,7 @@ console.log(result);
 // must write code inside callbacks
 
 function readCallback(file, callback) {
-    fs.readFile('text.txt', "utf8", function(err, data) {
+    fs.readFile(file, "utf8", function(err, data) {
         callback(err ? 'error' : data);
     });
 }

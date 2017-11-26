@@ -17,7 +17,7 @@ import (
 var (
     NumberOfJellybeans = 0
     Shuffle = true
-    MaxNumberOfJellybeans = int(math.Pow(2, 21))
+    MaxNumberOfJellybeans = int(math.Pow(2, 16))
     Traffic = 0
     MaxTraffic = 0
 )
