@@ -1,4 +1,4 @@
-//
+""" A game that tests your ability to write fast clients. """
 
 package main
 
