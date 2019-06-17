@@ -26,20 +26,20 @@ var (
 
 func guess_handler(w http.ResponseWriter, r *http.Request) {
     Traffic++
-    i, err := strconv.Atoi(r.URL.Path[1:])
+    guess, err := strconv.Atoi(r.URL.Path[1:])
     
     if err != nil {
         w.WriteHeader(http.StatusNotFound)
         
-    } else if i != NumberOfJellybeans {
-        fmt.Fprintf(w, "{\"failure\":%d}", i)
+    } else if guess != NumberOfJellybeans {
+        fmt.Fprintf(w, "{\"failure\":%d}", guess)
         
     } else {
-        log.Printf("Success! %d jellybeans!\n", i)
+        log.Printf("Success! %d jellybeans!\n", guess)
         if Shuffle {
             shuffle_beans()
         }
-        fmt.Fprintf(w, "{\"success\":%d}", i)
+        fmt.Fprintf(w, "{\"success\":%d}", guess)
     }
 }
 
